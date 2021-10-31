@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<!-- Meta -->
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Title -->
+		<title>DRAP</title>
+		<!-- Scripts -->
+		<script defer src="https://sdk.scdn.co/spotify-player.js"></script>
+		<!-- <script defer src="env.js"></script> -->
+		<script defer src="app.js"></script>
+		<!-- <script defer src="wps.js"></script> -->
+		<!-- Styling -->
+		<link rel="stylesheet" href="index.css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+	</head>
+
+	<body onload="onPageLoad()">
+		<h1 class="logo">ossify</h1>
+		<button onclick="requestAuthorization()">Auth</button>
+		<button onclick="refreshAccessToken()">ReAuth</button>
+
+		<div class="footer">
+
+			<div class="footerContainer">
+				<div class="footerContent">
+
+					<div class="left">
+						<div class="creator">
+							<h1 id="track_name"></h1>
+							<p id="track_artist"></p>
+						</div>
+					</div>
+
+					<div class="middle">
+						<span id="prevTrack" class="icon prev material-icons-round">skip_previous</span>
+
+						<input type="checkbox" name="togglePlay" id="togglePlay">
+						<label for="togglePlay">
+							<span class="togglePlay icon material-icons-round"></span>
+						</label>
+
+						<span id="nextTrack" class="icon next material-icons-round">skip_next</span>
+					</div>
+
+					<div class="right">
+						<input type="checkbox" name="shuffle" id="shuffle">
+						<label for="shuffle">
+							<span class="icon material-icons-round">shuffle</span>
+						</label>
+
+						<input type="range" min="0" max="100" id="volume" class="volume">
+						<span class="icon material-icons-round">more_horiz</span>
+					</div>
+
+				</div>
+
+				<div class="footerTrack">
+					<input type="range" min="0" max="100" id="seek">
+					<p id="progress_ms">0:00</p>
+					<p id="duration_ms">0:00</p>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
